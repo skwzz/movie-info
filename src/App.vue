@@ -16,7 +16,12 @@
         </p>
       </div>
     </div>
-    <Modal />
+    <Modal 
+      :data="data" 
+      :isModal="isModal" 
+      :selectedMovie="selectedMovie"
+      @closeModal="isModal=false"
+    />
 
     <p v-for="(item, i) in foods" :key="i">{{item}}</p>
 </template>
@@ -25,7 +30,7 @@
   import Navbar from './components/Navbar.vue';
   import Modal from './components/Modal.vue';
   import data from './assets/movies';
-  console.log(data);
+
   export default {
     name: 'App',
     data() {
